@@ -1,0 +1,50 @@
+.movie-details {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 90vh;
+  background: rgba(0 0 0/96%);
+  color: #fff;
+  border-radius: 30px;
+  border: 1px inset #fff;
+  padding: 15px;
+  animation: fadeIn 0.5s linear;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 20px;
+}
+
+h4 {
+  font-weight: bold;
+  margin: 20px;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 1.5%;
+  right: 1.5%;
+  color: red;
+  font-size: 1.2rem;
+}
+
+.movie-description {
+  padding: 10px;
+}
+
+.image-desc {
+  width: 110%;
+  height: auto;
+  border-radius: 30px;
+}
+
+h2 {
+  margin: 20px;
+}
