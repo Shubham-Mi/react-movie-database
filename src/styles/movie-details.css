@@ -1,5 +1,33 @@
 .movie-details {
   display: grid;
+  /* grid-template-rows: 1fr; */
+  color: #fff;
+  padding: 15px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 15px;
+}
+
+h4 {
+  font-weight: bold;
+  margin: 20px;
+}
+
+.image-desc {
+  width: 25vw;
+  height: auto;
+  border-radius: 30px;
+}
+
+h2 {
+  margin: 20px;
+}
+
+/* .movie-details {
+  display: grid;
   grid-template-rows: 1fr 1fr;
   position: absolute;
   top: 50%;
@@ -15,6 +43,7 @@
   animation: fadeIn 0.5s linear;
 }
 
+
 .row {
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -24,15 +53,6 @@
 h4 {
   font-weight: bold;
   margin: 20px;
-}
-
-.close {
-  cursor: pointer;
-  position: absolute;
-  top: 1.5%;
-  right: 1.5%;
-  color: red;
-  font-size: 1.2rem;
 }
 
 .movie-description {
@@ -47,4 +67,4 @@ h4 {
 
 h2 {
   margin: 20px;
-}
+} */

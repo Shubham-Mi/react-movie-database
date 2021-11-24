@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { NavBar, MovieList, MovieDetails } from "./components";
+import { NavBar } from "./components";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import MovieDetails from "./pages/MovieDetails";
 
 // https://dribbble.com/shots/5769571-Movie-Database-Dashboard/attachments/1244719?mode=media
 const API_BASE_URL = "http://www.omdbapi.com";
@@ -11,8 +15,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const [details, setDetails] = useState({});
-  const [detailsVisible, setDetailsVisible] = useState(false);
 
   const search = async (e) => {
     if (e.code === "Enter") {
@@ -40,24 +42,17 @@ function App() {
 
   return (
     <div className="main">
-      <NavBar
-        search={search}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-      />
-
-      <MovieList
-        movies={movies}
-        isLoading={isLoading}
-        setDetails={setDetails}
-        setDetailsVisible={setDetailsVisible}
-      />
-
-      <MovieDetails
-        setDetailsVisible={setDetailsVisible}
-        detailsVisible={detailsVisible}
-        details={details}
-      />
+      <Router>
+        <NavBar search={search} setInputValue={setInputValue} />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home movies={movies} isLoading={isLoading} />}
+          />
+          <Route path="/movie-list/:id" element={<MovieDetails />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
