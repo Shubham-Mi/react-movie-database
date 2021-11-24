@@ -7,7 +7,6 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
 
-// https://dribbble.com/shots/5769571-Movie-Database-Dashboard/attachments/1244719?mode=media
 const API_BASE_URL = "http://www.omdbapi.com";
 // &apikey=52c3929
 
